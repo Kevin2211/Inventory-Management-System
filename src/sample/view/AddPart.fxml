@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchor_pane" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AddPartController">
+
+    <children>
+        <VBox prefHeight="600.0" prefWidth="600.0" spacing="30">
+            <HBox spacing="60">
+                <Label>Add Part </Label>
+                <RadioButton fx:id="inHouseRadio" onAction="#inHouseRadioOption" selected="true">In-House</RadioButton>
+                <RadioButton fx:id="outsourcedRadio" onAction="#outSourcedRadioOption">Outsourced</RadioButton>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+
+            </HBox>
+            <HBox>
+                <VBox spacing="21">
+                    <Label>ID</Label>
+                    <Label>Name</Label>
+                    <Label>Inv</Label>
+                    <Label>Price/Cost</Label>
+                    <Label text="Min">Max</Label>
+                    <Label fx:id="ratioOptionLabel" text="Machine ID">Machine ID</Label>
+                    <padding>
+                        <Insets bottom="50.0" left="20.0" right="20.0" top="30.0" />
+                    </padding>
+                </VBox>
+                <VBox spacing="10">
+                    <TextField fx:id="partId" editable="false" maxWidth="150" promptText="Auto Gen-Disabled" style="-fx-prompt-text-fill: gray;" />
+                    <TextField fx:id="partName" maxWidth="150" promptText="Name" />
+                    <TextField fx:id="partInv" maxWidth="150" promptText="Inv" />
+                    <TextField fx:id="partPrice" maxWidth="150" promptText="Price" />
+                    <HBox spacing="20">
+                        <TextField fx:id="partMin" maxWidth="150" promptText="Min" />
+                        <Label alignment="BOTTOM_CENTER" text="Max">
+                            Min
+                            <padding>
+                                <Insets bottom="0.0" left="0.0" right="0.0" top="5.0" />
+                            </padding>
+                        </Label>
+                        <TextField fx:id="partMax" maxWidth="150" promptText="Max" />
+
+                    </HBox>
+                    <TextField fx:id="partMachineId" maxWidth="150" promptText="Machine ID" />
+                    <padding>
+                        <Insets bottom="50.0" left="20.0" right="20.0" top="30.0" />
+                    </padding>
+                </VBox>
+
+            </HBox>
+
+            <HBox alignment="CENTER_RIGHT" spacing="20">
+                <Button fx:id="savePart" onAction="#saveButtonPushed">
+                    Save
+                </Button>
+                <Button fx:id="cancelButton" onAction="#cancelButtonPushed">
+                    Cancel
+                </Button>
+
+                <padding>
+                    <Insets bottom="0.0" left="0.0" right="50.0" top="0.0" />
+                </padding>
+            </HBox>
+            <padding>
+                <Insets bottom="50.0" left="50.0" right="20.0" top="50.0" />
+            </padding>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

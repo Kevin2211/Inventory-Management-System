@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MainMenuController">
+    <children>
+        <VBox prefHeight="515.0" prefWidth="940.0" spacing="15">
+            <children>
+                <Label layoutX="39.0" layoutY="35.0" text="Inventory Management System" underline="true">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font></Label>
+                <HBox layoutX="39.0" layoutY="59.0" prefHeight="398.0" prefWidth="860.0" spacing="45">
+                    <children>
+                        <VBox alignment="CENTER_RIGHT" spacing="10" style=" -fx-border-color:gray; -fx-border-width: 1; -fx-border-style: solid; -fx-border-radius: 5 5 5 5;">
+                            <HBox spacing="140.0">
+                                <Label>Parts</Label>
+                                <TextField fx:id="partSearch" alignment="CENTER_LEFT" onAction="#searchedPart" prefHeight="27.0" prefWidth="192.0" promptText="Search by Part Id or Name" style="-fx-prompt-text-fill: gray;" />
+                                <padding>
+                                    <Insets bottom="5.0" left="5.0" top="5.0" />
+                                </padding>
+                            </HBox>
+                            <TableView fx:id="partTable" prefHeight="370.0" prefWidth="370.0">
+                                <placeholder>
+                                    <Label fx:id="table_message" text="" />
+                                </placeholder>
+                                <columns>
+                                    <TableColumn fx:id="partId" prefWidth="75.0" text="Part ID" />
+                                    <TableColumn fx:id="partName" prefWidth="75.0" text="Part Name" />
+                                    <TableColumn fx:id="partInventory" prefWidth="100.0" text="Inventory Level" />
+                                    <TableColumn fx:id="partPrice" prefWidth="120.0" text="Price/ Cost per Unit" />
+                                </columns>
+                            </TableView>
+                            <HBox alignment="TOP_RIGHT" spacing="5">
+                                <Button fx:id="addPart" onAction="#addPartButtonPushed" text="Add">Add</Button>
+                                <Button fx:id="modifyPartButton" onAction="#modifyPartButtonPushed">Modify</Button>
+                                <Button fx:id="deletePart" onAction="#deletePartButtonPushed">Delete</Button>
+                                <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                </padding>
+                            </HBox>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+
+                        </VBox>
+
+                        <VBox alignment="CENTER_LEFT" spacing="10" style=" -fx-border-color:gray; -fx-border-width: 1; -fx-border-style: solid; -fx-border-radius: 5 5 5 5;">
+                            <HBox spacing="120.0">
+                                <Label>Products</Label>
+                                <TextField fx:id="productSearch" alignment="CENTER_LEFT" onAction="#searchedProduct" prefHeight="27.0" prefWidth="197.0" promptText="Search by Product Id or Name" style="-fx-prompt-text-fill: gray;" />
+                                <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                </padding>
+                            </HBox>
+                            <TableView fx:id="productTable" prefHeight="370.0" prefWidth="370.0">
+                                <columns>
+                                    <TableColumn fx:id="productId" prefWidth="75.0" text="Product ID" />
+                                    <TableColumn fx:id="productName" prefWidth="75.0" text="Product  Name" />
+                                    <TableColumn fx:id="productInventory" prefWidth="100.0" text="Inventory Level" />
+                                    <TableColumn fx:id="productPrice" prefWidth="120.0" text="Price/ Cost per Unit" />
+                                </columns></TableView>
+                            <HBox alignment="TOP_RIGHT" spacing="5">
+                                <Button fx:id="addProduct" onAction="#addProductButtonPushed">Add</Button>
+                                <Button fx:id="modifyProductButton" onAction="#modifyProductButtonPushed">Modify</Button>
+                                <Button fx:id="deleteProduct" onAction="#deleteProductButtonPushed">Delete</Button>
+                                <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                </padding>
+
+                            </HBox>
+
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox alignment="BOTTOM_RIGHT">
+                    <Button fx:id="exit" onAction="#exitButtonPushed">Exit</Button>
+
+                    <padding>
+                        <Insets bottom="0.0" left="0.0" right="20.0" top="0.0" />
+                    </padding>
+                </HBox>
+
+
+
+            </children>
+            <padding>
+                <Insets bottom="40.0" left="40.0" right="40.0" top="30.0" />
+            </padding>
+        </VBox>
+
+    </children>
+
+</AnchorPane>
